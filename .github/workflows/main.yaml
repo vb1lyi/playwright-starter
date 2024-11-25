@@ -53,3 +53,12 @@ jobs:
             build/test-results/
             build/playwright-results/
           retention-days: 30
+            
+      # Generate test report
+      - name: Publish Test Report
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: Playwright Test Results
+          path: build/test-results/test/TEST-*.xml
+          reporter: java-junit
