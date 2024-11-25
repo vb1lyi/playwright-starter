@@ -18,8 +18,8 @@ public class TestExample {
     @BeforeAll
     static void launchBrowser() {
         playwright = Playwright.create();
-        // browser = playwright.chromium().launch() - headless
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        browser = playwright.chromium().launch();
+//        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
     }
 
     @AfterAll
