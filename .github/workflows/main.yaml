@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ main ]
 
+# Add permissions block at workflow level
+permissions:
+  contents: read
+  checks: write    # Required for test reporting
+  pull-requests: write  # Required if you want to report on PRs
+
 jobs:
   test:
     runs-on: ubuntu-latest
